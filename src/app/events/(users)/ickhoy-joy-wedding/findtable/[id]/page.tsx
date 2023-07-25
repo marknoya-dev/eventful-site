@@ -17,13 +17,13 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <main className="max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
       <div className="text-center">
-        <span className="jost text-[1em] font-bold tracking-wide text-copy-caption ">
+        <span className="jost font-regular tracking-wide text-copy-caption sm:text-[1em] ">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           We're glad you're here,{" "}
           {tableData.guest && tableData.guest.fullName.split(" ")[0]}!
         </span>
         <h3 className="kaiseki text-black">
-          <p className="text-[32px] font-bold text-black/80">
+          <p className="font-bold text-primary-base text-h4 sm:text-h3">
             Your table number is
           </p>
           <p className="text-[90px] leading-[80px]">
@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
         </h3>
       </div>
       <div>
-        <h2 className="kaiseki font-bold text-copy-caption text-[24px] mt-40px mb-8px italic">
+        <h2 className="kaiseki font-bold text-copy-caption text-[20px] mt-40px mb-8px">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           You're seated with
         </h2>

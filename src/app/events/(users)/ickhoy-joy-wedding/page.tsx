@@ -14,29 +14,27 @@ export default function Home() {
   return (
     <main className="">
       <div className="text-center">
-        <span className="text-overline tracking-wider text-copy-caption">
+        <span className="text-overline jost tracking-wider text-copy-caption text-h6 sm:text-body-lg">
           Welcome to
         </span>
-        <h3 className="event-header leading-[50px] ">
+        <h3 className="event-header leading-[50px] font-medium max-[320px]:text-h4 sm:text-h1">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           <span className="block">Ickhoy and Joy's</span>
           <span>Wedding Reception</span>
         </h3>
       </div>
       <div className="flex flex-col justify-center items-center">
-        <span className="font-bold mt-40px text-copy-caption w-[40%] text-center">
+        <span className="font-bold mt-40px mb-16px text-copy-caption w-[50%] text-center text-body">
           Scan the QR code below for your table assignment
         </span>
-        <Image
-          src={QRcode}
-          alt="QR Code"
-          width={600}
-          height={600}
-          className="ml-40px"
-        />
+        <div className="ml-[5%] w-[70vw] md:w-[60vw]">
+          <Image src={QRcode} alt="QR Code" />
+        </div>
       </div>
-      <div className="flex flex-col justify-center align-middle items-center">
-        <span className="font-bold">No QR scanner?</span>
+      <div className="flex flex-col justify-center align-middle items-center mt-24px">
+        <span className="font-bold text-body text-primary-base">
+          No QR scanner?
+        </span>
         <p className="flex gap-4px text-copy-caption text-body justify-center items-center">
           Check your table number{" "}
           <Button

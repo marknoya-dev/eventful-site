@@ -66,11 +66,11 @@ export const Guests: Guest[] = [
     table: 1,
   },
   {
-    fullName: "Bong Saquing",
+    fullName: "Reeia Leido",
     table: 2,
   },
   {
-    fullName: "Aumar Aguilar",
+    fullName: "",
     table: 2,
   },
   {
@@ -103,35 +103,35 @@ export const Guests: Guest[] = [
   },
 
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. JP Masakayan",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Roochie Masakayan",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Ricky Sarthou",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Bert Villa",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Bong Saquing",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Bong (Plus One)",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Aumar Aguilar",
     table: 3,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ptr. Aumar (Plus One)",
     table: 3,
   },
 
@@ -268,14 +268,10 @@ export const GuestsContextProvider = ({
 
   const getTable = (guestID: string) => {
     const guest = guestList.find((guest) => guest.id === guestID);
-
-    console.log(guest);
-
     const table = guestList.filter((currGuest) => {
       return currGuest.table === guest?.table;
     });
 
-    console.log(table);
     return { guest, table };
   };
 

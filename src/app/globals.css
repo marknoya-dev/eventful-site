@@ -27,7 +27,6 @@
 
 .event-header {
   font-family: "Kaisei Tokumin", serif;
-  font-size: 2.8em;
   color: #4b4639;
   line-height: 1em;
 }
@@ -38,7 +37,6 @@
   text-align: center;
   font-size: 1em;
   font-style: normal;
-  font-weight: 600;
   line-height: 22px;
   letter-spacing: 2.89px;
   text-transform: uppercase;
