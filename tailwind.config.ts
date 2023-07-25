@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
 import { Stark } from "@eventful-ph/stark";
-import image from "public/background.jpg";
 const config = {
   content: [
     "./node_modules/@eventful-ph/stark/dist/components/**/*.{js,ts,jsx,tsx}",

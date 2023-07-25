@@ -29,7 +29,6 @@ export default function Page() {
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    console.log(selectedOption);
 
     //find selectedGuest's fullName on allTables.guests
     const selectedTable = getAllTables().find((table) => {
@@ -74,7 +73,7 @@ export default function Page() {
           />
           <Button
             label="Search"
-            color="primary"
+            // color="primary"
             submit
             disabled={selectedOption ? false : true}
           />
@@ -135,7 +134,7 @@ const TableCard = ({
 }) => {
   return (
     <div className="text-left bg-white p-40px border border-l-4 border-l-primary-base rounded-4px">
-      <div className="event-header text-h4 pb-24px">Table {number}</div>
+      <div className="kaiseki text-h3 pb-24px">Table {number}</div>
       <div className="grid grid-rows-2 grid-cols-2 columns-2">
         {guests.map((guest, i) => {
           return <p key={i}>{guest.fullName}</p>;

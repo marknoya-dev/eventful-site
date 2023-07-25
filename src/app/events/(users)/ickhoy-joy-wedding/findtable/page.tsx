@@ -4,12 +4,12 @@ import { useGuestsContext } from "@/app/events/(users)/ickhoy-joy-wedding/Guests
 export default function Page() {
   const { guestList } = useGuestsContext();
   return (
-    <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
+    <main className="max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
       <div className="text-center">
         <span className="text-overline tracking-wider text-copy-caption">
           Welcome to
         </span>
-        <h3 className="event-header leading-[50px] ">
+        <h3 className="event-header leading-[50px]">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           <span className="block">Ickhoy and Joy's</span>
           <span>Wedding Reception</span>

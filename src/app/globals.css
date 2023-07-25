@@ -17,19 +17,28 @@
   }
 }
 
+.kaiseki {
+  font-family: "Kaisei Tokumin", serif;
+}
+
+.jost {
+  font-family: "Jost", sans-serif;
+}
+
 .event-header {
   font-family: "Kaisei Tokumin", serif;
-  font-size: 3rem;
+  font-size: 2.8em;
   color: #4b4639;
+  line-height: 1em;
 }
 
 .text-overline {
   font-family: "Jost", sans-serif;
   color: #555;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1em;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 22px;
   letter-spacing: 2.89px;
   text-transform: uppercase;

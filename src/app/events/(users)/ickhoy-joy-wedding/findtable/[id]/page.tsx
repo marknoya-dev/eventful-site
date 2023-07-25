@@ -15,25 +15,28 @@ export default function Page({ params }: { params: { id: string } }) {
   const [tableData, setCurrTable] = useState(guests.getTable(params.id));
 
   return (
-    <main className="p-40px max-w-screen-md h-screen flex flex-col gap-40px justify-center align-middle items-center mx-auto">
+    <main className="max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
       <div className="text-center">
-        <span className="text-overline text-[20px] tracking-wider text-copy-caption">
+        <span className="jost text-[1em] font-bold tracking-wide text-copy-caption ">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           We're glad you're here,{" "}
           {tableData.guest && tableData.guest.fullName.split(" ")[0]}!
         </span>
-        <h3 className="event-header leading-[50px] ">
-          <p className="text-[40px]">Your table number is</p>
-          <p className="text-[90px] mt-16px">
+        <h3 className="kaiseki text-black">
+          <p className="text-[32px] font-bold text-black/80">
+            Your table number is
+          </p>
+          <p className="text-[90px] leading-[80px]">
             #{tableData.guest && tableData.guest.table}
           </p>
         </h3>
       </div>
-      <span className="font-bold mt-40px text-copy-caption"></span>
       <div>
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <h2 className="event-header text-[30px]">You're seated with</h2>
-        <ul className="text-center font-[32px] leading-[24px] mt-24px">
+        <h2 className="kaiseki font-bold text-copy-caption text-[24px] mt-40px mb-8px italic">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          You're seated with
+        </h2>
+        <ul className="text-center font-[32px] leading-[24px] mb-24px text-copy-caption">
           {tableData?.table.map((guest, i) => {
             if (
               guest.fullName !== (tableData.guest && tableData.guest.fullName)

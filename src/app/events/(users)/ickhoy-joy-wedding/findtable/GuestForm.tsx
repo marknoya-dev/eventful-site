@@ -38,7 +38,7 @@ export default function GuestForm({ guests }: { guests: Guest[] }) {
   };
 
   return (
-    <div className="flex flex-col gap-8px w-[80%] mb-40px">
+    <div className="flex flex-col gap-8px w-[90%] mb-40px">
       <Combobox
         id="combobox-guest"
         options={options}
