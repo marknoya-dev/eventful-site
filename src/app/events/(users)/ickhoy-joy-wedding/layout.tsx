@@ -42,6 +42,7 @@ export default function RootLayout({
             objectFit: "cover",
             zIndex: -1,
           }}
+          fill
           alt="Background image"
         />
         <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px align-middle items-center mx-auto">
