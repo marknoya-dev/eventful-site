@@ -4,35 +4,46 @@ import { useGuestsContext } from "@/app/events/(users)/ickhoy-joy-wedding/Guests
 import { Button } from "@eventful-ph/stark";
 import { useRouter } from "next/navigation";
 import { motion, useAnimate, stagger } from "framer-motion";
+import Image from "next/image";
 
 export default function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
   const guests = useGuestsContext();
+  const [floorPlan, setFloorPlan] = useState<string>("");
   const [scope, animate] = useAnimate();
+  const [tableData, setCurrTable] = useState(guests.getTable(params.id));
 
   const onClickHandler = () => {
     router.replace("/events/ickhoy-joy-wedding/findtable");
   };
 
   useEffect(() => {
-    animate(
-      ".div-animated",
-      { opacity: 1, y: -20 },
-      { delay: stagger(0.1, { startDelay: 0.15 }), ease: "easeInOut" }
-    );
-  }, [animate]);
+    if (tableData.guest === undefined) {
+      router.replace("/events/ickhoy-joy-wedding/findtable");
+    } else {
+      animate(
+        ".div-animated",
+        { opacity: 1, y: -20 },
+        { delay: stagger(0.1, { startDelay: 0.15 }), ease: "easeInOut" }
+      );
 
-  const [tableData, setCurrTable] = useState(guests.getTable(params.id));
+      setFloorPlan(
+        `/../public/floorplan/Table ${
+          tableData.guest && tableData.guest.table
+        }.jpg`
+      );
+    }
+  }, [animate, tableData, router]);
 
   return (
-    <main
+    <div
       ref={scope}
-      className="max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto"
+      className="max-w-screen-md h-[60vh] flex flex-col gap-8px justify-start align-top"
     >
       <motion.div
         initial={{ opacity: 0, y: 0 }}
         transition={{ ease: "easeInOut", duration: 2 }}
-        className="div-animated text-center"
+        className="div-animated text-center flex flex-col justify-center align-center items-center"
       >
         <span className="jost font-regular tracking-wide text-copy-caption sm:text-[1em] ">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
@@ -47,17 +58,31 @@ export default function Page({ params }: { params: { id: string } }) {
             #{tableData.guest && tableData.guest.table}
           </p>
         </h3>
+        <div className="w-full mt-40px relative">
+          <Image
+            src={floorPlan}
+            alt="floorPlan"
+            sizes="100vw"
+            width={0}
+            height={0}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
+        </div>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0, y: 0 }}
         transition={{ ease: "easeInOut", duration: 1 }}
-        className="div-animated"
+        className="div-animated flex flex-col align-center justify-center items-center"
       >
         <h2 className="kaiseki font-bold text-copy-caption text-[20px] mt-40px mb-8px">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           You're seated with
         </h2>
-        <ul className="text-center font-[32px] leading-[24px] mb-24px text-copy-caption">
+        <ul className="text-center font-[32px] leading-[24px] mb-4px text-copy-caption">
           {tableData?.table.map((guest, i) => {
             if (
               guest.fullName !== (tableData.guest && tableData.guest.fullName)
@@ -67,10 +92,11 @@ export default function Page({ params }: { params: { id: string } }) {
         </ul>
       </motion.div>
       <Button
+        className="self-center div-animted mb-[90px]"
         label="Search for another name"
         onClick={onClickHandler}
         color="primary"
       />
-    </main>
+    </div>
   );
 }

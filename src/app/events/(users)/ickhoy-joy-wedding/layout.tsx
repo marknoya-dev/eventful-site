@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${inter.className}`}>
-      <body className="sticky">
+      <body>
         <Image
           src={backgroundImage}
           quality={100}
@@ -33,9 +33,9 @@ export default function RootLayout({
           }}
           alt="Background image"
         />
-        <div className="p-40px max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
+        <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
           <GuestsContextProvider>{children}</GuestsContextProvider>
-        </div>
+        </main>
       </body>
     </html>
   );
