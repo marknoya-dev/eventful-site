@@ -13,7 +13,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div className={`${inter.className}`}>main layout loaded{children}</div>
-  );
+  return <div className={`${inter.className}`}>{children}</div>;
 }

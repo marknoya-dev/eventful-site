@@ -1,16 +1,9 @@
 "use client";
 import { Button } from "@eventful-ph/stark";
 import { useRouter, usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import QRcode from "public/qrcode.png";
-import { motion } from "framer-motion";
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Ickhoy and Joy's Wedding Reception",
-  description: "We're glad to have you celebrate this special day!",
-};
 
 export default function Home() {
   const router = useRouter();

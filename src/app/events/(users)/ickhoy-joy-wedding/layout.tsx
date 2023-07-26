@@ -1,22 +1,16 @@
 import "@/app/globals.css";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GuestsContextProvider } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
+import Image from "next/image";
 import backgroundImage from "public/background.jpg";
 import eventfulBadge from "public/eventful-badge.png";
-import { GuestsContextProvider } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
 import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ickhoy and Joy's Wedding Reception",
   description: "We're glad to have you celebrate this special day!",
-  openGraph: {
-    images: "/og-image.png",
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
