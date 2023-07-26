@@ -28,8 +28,9 @@ export default function Page({ params }: { params: { id: string } }) {
         { delay: stagger(0.1, { startDelay: 0.15 }), ease: "easeInOut" }
       );
 
-      console.log(`/public/floorplan/Table ${tableData.guest.table}.jpg`);
-      setFloorPlan(`/public/floorplan/Table ${tableData.guest.table}.jpg`);
+      setFloorPlan(
+        `/../public/floorplan/Table${" "}${tableData.guest.table}.jpg`
+      );
     }
   }, [animate, tableData, router]);
 
@@ -59,7 +60,7 @@ export default function Page({ params }: { params: { id: string } }) {
         <div className="w-full mt-40px relative">
           <Image
             src={floorPlan}
-            alt="floorPlan"
+            alt="Floor Plan"
             sizes="100vw"
             width={0}
             height={0}
