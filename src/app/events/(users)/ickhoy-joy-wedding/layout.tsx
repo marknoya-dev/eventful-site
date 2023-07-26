@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import backgroundImage from "public/background.jpg";
+import eventfulBadge from "public/eventful-badge.png";
 import { GuestsContextProvider } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
 import React from "react";
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +21,18 @@ export default function RootLayout({
   return (
     <html className={`${inter.className}`}>
       <body>
+        <Image
+          src={eventfulBadge}
+          alt="eventful badge"
+          quality={100}
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            width: "180px",
+            height: "auto",
+          }}
+        />
         <Image
           src={backgroundImage}
           quality={100}
