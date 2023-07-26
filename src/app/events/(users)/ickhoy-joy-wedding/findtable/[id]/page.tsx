@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <div
       ref={scope}
-      className="max-w-screen-md h-[60vh] flex flex-col gap-8px justify-start align-top"
+      className="flex flex-col gap-8px justify-self-start justify-start align-top item pt-[20vh]"
     >
       <motion.div
         initial={{ opacity: 0, y: 0 }}

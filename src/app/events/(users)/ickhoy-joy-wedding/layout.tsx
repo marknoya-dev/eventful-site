@@ -31,6 +31,7 @@ export default function RootLayout({
             right: "20px",
             width: "180px",
             height: "auto",
+            zIndex: 1,
           }}
         />
         <Image
@@ -46,7 +47,7 @@ export default function RootLayout({
           }}
           alt="Background image"
         />
-        <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px justify-center align-middle items-center mx-auto">
+        <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px align-middle items-center mx-auto">
           <GuestsContextProvider>{children}</GuestsContextProvider>
         </main>
       </body>

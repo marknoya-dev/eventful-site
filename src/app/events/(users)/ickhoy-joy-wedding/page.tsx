@@ -13,9 +13,9 @@ export default function Home() {
   };
 
   return (
-    <main className="">
+    <main className="my-auto">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "easeOut", duration: 0.5 }}
       >
@@ -33,7 +33,7 @@ export default function Home() {
           <span className="font-bold mt-40px mb-16px text-copy-caption w-[50%] text-center text-body">
             Scan the QR code below for your table assignment
           </span>
-          <div className="ml-[5%] w-auto">
+          <div className="w-auto">
             <Image src={QRcode} alt="QR Code" />
           </div>
         </div>
