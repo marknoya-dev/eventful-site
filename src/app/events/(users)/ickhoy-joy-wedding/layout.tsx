@@ -39,10 +39,12 @@ export default function RootLayout({
           quality={100}
           sizes="100vw"
           style={{
+            width: "100%",
+            height: "100%",
+            position: "fixed",
             objectFit: "cover",
             zIndex: -1,
           }}
-          fill
           alt="Background image"
         />
         <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px align-middle items-center mx-auto">
