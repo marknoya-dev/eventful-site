@@ -5,6 +5,7 @@ import { Button } from "@eventful-ph/stark";
 import { useRouter } from "next/navigation";
 import { motion, useAnimate, stagger } from "framer-motion";
 import Image from "next/image";
+import path from "path";
 
 export default function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
@@ -27,11 +28,8 @@ export default function Page({ params }: { params: { id: string } }) {
         { delay: stagger(0.1, { startDelay: 0.15 }), ease: "easeInOut" }
       );
 
-      setFloorPlan(
-        `/../public/floorplan/Table ${
-          tableData.guest && tableData.guest.table
-        }.jpg`
-      );
+      console.log(`/public/floorplan/Table ${tableData.guest.table}.jpg`);
+      setFloorPlan(`/public/floorplan/Table ${tableData.guest.table}.jpg`);
     }
   }, [animate, tableData, router]);
 
