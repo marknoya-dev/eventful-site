@@ -29,6 +29,9 @@ export default function Page({ params }: { params: { id: string } }) {
 
       setFloorPlan(`/floorplan/Table${" "}${tableData.guest.table}.jpg`);
     }
+
+    const tableNumber = tableData.guest && tableData.guest.table;
+    setFloorPlan(`/floorplan/Table${" "}${tableNumber}.jpg`);
   }, [animate, tableData, router]);
 
   return (
@@ -51,7 +54,10 @@ export default function Page({ params }: { params: { id: string } }) {
             Your table number is
           </p>
           <p className="text-[90px] leading-[80px] mt-8px">
-            #{tableData.guest && tableData.guest.table}
+            {tableData.guest &&
+              !tableData.guest.table.toString().includes("VIP") &&
+              "#"}
+            {tableData.guest && tableData.guest.table}
           </p>
         </h3>
         <div className="w-full mt-40px relative">

@@ -52,6 +52,11 @@ export default function Page() {
     setHasSearch(true);
   };
 
+  const handleClear = () => {
+    setSelectedOption("");
+    handleReset();
+  };
+
   const handleReset = () => {
     setAllTables(getAllTables());
     setHasSearch(() => !hasSearch);
@@ -80,7 +85,7 @@ export default function Page() {
             id="name-select-field"
             options={options}
             onChange={setSelectedOption}
-            onClear={() => setSelectedOption("")}
+            onClear={handleClear}
           />
           <Button
             label="Search"
@@ -144,7 +149,7 @@ const TableCard = ({
   guests: {
     id?: string;
     fullName: string;
-    table: number;
+    table: number | string;
   }[];
 }) => {
   return (

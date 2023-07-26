@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Combobox, Button } from "@eventful-ph/stark";
 import { useRouter } from "next/navigation";
-import type { Guest } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
+import type { Guest } from "@/app/events/(users)/ickhoy-joy-wedding/utils";
 
 interface OptionType {
   id: string;
