@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Combobox } from "@eventful-ph/stark";
 import { useGuestsContext } from "../GuestsContext";
-import { motion, useAnimate, stagger, AnimationScope } from "framer-motion";
+import { motion, useAnimate, stagger } from "framer-motion";
 
 interface OptionType {
   id: string;

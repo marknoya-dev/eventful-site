@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { TableDataType, GuestsContextType, Guest, Guests } from "./utils";
+import { GuestsContextType, Guest, Guests } from "./utils";
 
 const GuestsContext = createContext<GuestsContextType>({
   guestList: [],

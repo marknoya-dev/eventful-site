@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useGuestsContext } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
 import { Button } from "@eventful-ph/stark";
 import { useRouter } from "next/navigation";
@@ -60,18 +60,21 @@ export default function Page({ params }: { params: { id: string } }) {
             {tableData.guest && tableData.guest.table}
           </p>
         </h3>
+
         <div className="w-full mt-40px relative">
-          <Image
-            src={floorPlan}
-            alt="Floor Plan"
-            sizes="100vw"
-            width={0}
-            height={0}
-            style={{
-              width: "100%",
-              height: "auto",
-            }}
-          />
+          <Suspense fallback={<p>Loading Floor Plan...</p>}>
+            <Image
+              src={floorPlan}
+              alt="Floor Plan"
+              sizes="100vw"
+              width={0}
+              height={0}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </Suspense>
         </div>
       </motion.div>
 

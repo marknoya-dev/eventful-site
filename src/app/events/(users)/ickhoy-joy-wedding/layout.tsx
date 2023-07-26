@@ -9,8 +9,14 @@ import React from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Eventful Philippines",
-  description: "Let's make events planning delightful",
+  title: "Ickhoy and Joy's Wedding Reception",
+  description: "We're glad to have you celebrate this special day!",
+  openGraph: {
+    images: "/og-image.png",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

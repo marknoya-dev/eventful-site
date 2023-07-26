@@ -5,6 +5,13 @@ import Image from "next/image";
 import QRcode from "public/qrcode.png";
 import { motion } from "framer-motion";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ickhoy and Joy's Wedding Reception",
+  description: "We're glad to have you celebrate this special day!",
+};
+
 export default function Home() {
   const router = useRouter();
   const pathName = usePathname();
