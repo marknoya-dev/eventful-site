@@ -45,7 +45,13 @@ export default function GuestForm({ guests }: { guests: Guest[] }) {
         placeholder="Type in your name here"
         onChange={setSelectedOption}
       />
-      <Button label="Search" color="primary" fullWidth onClick={handleClick} />
+      <Button
+        label="Search"
+        color="primary"
+        fullWidth
+        onClick={handleClick}
+        disabled={selectedOption ? false : true}
+      />
     </div>
   );
 }

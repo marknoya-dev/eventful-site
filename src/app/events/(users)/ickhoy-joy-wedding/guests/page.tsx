@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Combobox } from "@eventful-ph/stark";
 import { useGuestsContext } from "../GuestsContext";
+import { motion, useAnimate, stagger, AnimationScope } from "framer-motion";
 
 interface OptionType {
   id: string;
@@ -10,14 +11,16 @@ interface OptionType {
   value: string;
 }
 
+const staggerTableCard = stagger(0.1, { startDelay: 0.15 });
+
 export default function Page() {
   const { getTable, getAllTables, guestList } = useGuestsContext();
 
   const [allTables, setAllTables] = useState(getAllTables());
-
   const [selectedOption, setSelectedOption] = useState<string | number>();
   const [options, setOptions] = useState<OptionType[]>([]);
   const [hasSearch, setHasSearch] = useState(false);
+  const [scope, animate] = useAnimate();
 
   const optns: OptionType[] = guestList.map((guest) => {
     return {
@@ -56,6 +59,13 @@ export default function Page() {
 
   useEffect(() => {
     setOptions(optns);
+    animate(
+      ".table-card",
+      { opacity: 1 },
+      {
+        delay: staggerTableCard,
+      }
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -70,17 +80,22 @@ export default function Page() {
             id="name-select-field"
             options={options}
             onChange={setSelectedOption}
+            onClear={() => setSelectedOption("")}
           />
           <Button
             label="Search"
-            // color="primary"
+            color="primary"
             submit
             disabled={selectedOption ? false : true}
           />
         </form>
       </div>
       <main className="h-[75vh] overflow-y-scroll no-scrollbar mt-40px">
-        <div className="flex flex-col gap-16px">
+        <motion.div
+          className="flex flex-col gap-16px"
+          layout="position"
+          ref={scope}
+        >
           {allTables.map((table, i) => {
             return (
               <TableCard
@@ -90,7 +105,7 @@ export default function Page() {
               />
             );
           })}
-        </div>
+        </motion.div>
         {hasSearch && allTables.length === 0 && (
           <div className="text-center mt-40px flex flex-col justify-center items-center gap-16px">
             <h2 className="text-h2">No results found</h2>
@@ -133,13 +148,19 @@ const TableCard = ({
   }[];
 }) => {
   return (
-    <div className="text-left bg-white p-40px border border-l-4 border-l-primary-base rounded-4px">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
+      className="table-card text-left bg-white p-40px border border-l-4 border-l-primary-base rounded-4px"
+    >
       <div className="kaiseki text-h3 pb-24px">Table {number}</div>
       <div className="grid grid-rows-2 grid-cols-2 columns-2">
         {guests.map((guest, i) => {
           return <p key={i}>{guest.fullName}</p>;
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };

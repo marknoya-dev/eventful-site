@@ -136,44 +136,36 @@ export const Guests: Guest[] = [
   },
 
   {
-    fullName: "Guest Name",
+    fullName: "Ronel Canaco",
     table: 4,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Dibs Bacasmas",
     table: 4,
   },
   {
-    fullName: "Guest Name",
+    fullName: "David Balansag",
     table: 4,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Ronn Mata",
     table: 4,
   },
   {
-    fullName: "Guest Name",
+    fullName: "Kurt Dela Luna",
     table: 4,
   },
   {
-    fullName: "Guest Name",
+    fullName: "James Bayucan",
     table: 4,
   },
   {
-    fullName: "Guest Name",
-    table: 4,
-  },
-  {
-    fullName: "Guest Name",
-    table: 4,
-  },
-  {
-    fullName: "Guest Name",
+    fullName: "Lito Amores",
     table: 4,
   },
 
   {
-    fullName: "Guest Name",
+    fullName: "",
     table: 5,
   },
 
