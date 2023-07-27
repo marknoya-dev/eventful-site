@@ -20,7 +20,7 @@ export const list = [
     guests: [
       "Dr. Peter Tan-Chi",
       "Deonna Tan-Chi",
-      "Ptr. Jp Masakayan",
+      "Ptr. JP Masakayan",
       "Roochie Masakayan",
       "Ptr. Ricky Sarthou",
       "Ptr. Bert Villa",
@@ -98,7 +98,7 @@ export const list = [
     guests: [
       "Aumar Aguilar",
       "Nikki Aguilar",
-      "Erwin Elivazo",
+      "Erwin Elevazo",
       "Gino Ong",
       "Marc Sorongon",
       "Ephraim Sorongon",
@@ -130,6 +130,7 @@ export const list = [
       "Louise Yu",
       "Pao Ollesca",
       "Jessica Tsoi-Rivera",
+      "Peewee Vivas",
     ],
   },
   {
@@ -618,12 +619,13 @@ export const list = [
     guests: [
       "John Moreno",
       "Niña Moreno",
-      "Paulo Ebora",
+      "Paolo Ebora",
       "Gayle Madarang",
       "Jason Discipulo",
       "Peds Dimafelix",
       "Tom Murillo",
       "Gica Lumabao",
+      "Ria Versoza",
     ],
   },
   {
@@ -635,7 +637,7 @@ export const list = [
       "Catha Esteban",
       "Mark Noya",
       "Grace Catindig",
-      "John Banares",
+      "John Benares",
       "Jemyl Manubay",
     ],
   },
