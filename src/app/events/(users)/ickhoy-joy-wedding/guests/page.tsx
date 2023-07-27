@@ -1,8 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, Combobox } from "@eventful-ph/stark";
+import { Button, Combobox, RemixIcon } from "@eventful-ph/stark";
 import { useGuestsContext } from "../GuestsContext";
 import { motion, useAnimate, stagger } from "framer-motion";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+const Modal = dynamic(
+  () => import("@eventful-ph/stark/dist/components/Modal"),
+  { ssr: false }
+);
 
 interface OptionType {
   id: string;
@@ -20,6 +26,8 @@ export default function Page() {
   const [selectedOption, setSelectedOption] = useState<string | number>();
   const [options, setOptions] = useState<OptionType[]>([]);
   const [hasSearch, setHasSearch] = useState(false);
+  const [floorPlan, setFloorPlan] = useState<string>("");
+  const [showModal, setShowModal] = useState(false);
   const [scope, animate] = useAnimate();
 
   const optns: OptionType[] = guestList.map((guest) => {
@@ -52,14 +60,15 @@ export default function Page() {
     setHasSearch(true);
   };
 
-  const handleClear = () => {
-    setSelectedOption("");
-    handleReset();
-  };
-
   const handleReset = () => {
+    setSelectedOption("");
     setAllTables(getAllTables());
     setHasSearch(() => !hasSearch);
+  };
+
+  const handleFloorPlan = (tableNum: string) => {
+    setShowModal(true);
+    setFloorPlan(`/floorplan/Table${" "}${tableNum}.jpg`);
   };
 
   useEffect(() => {
@@ -75,9 +84,36 @@ export default function Page() {
   }, []);
   return (
     <>
+      <Modal
+        id="image-modal"
+        show={showModal}
+        size="large"
+        onClose={() => setShowModal(false)}
+        title="Table Guide"
+        caption="Please use this guide to locate your table."
+        primaryButton={{
+          label: "Close",
+          onClick: () => setShowModal(false),
+          isLoading: false,
+        }}
+      >
+        <div className="relative w-full">
+          <Image
+            src={floorPlan}
+            alt="Floor Plan"
+            sizes="100vw"
+            width={0}
+            height={0}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+          />
+        </div>
+      </Modal>
       <div className="bg-white rounded-8px shadow-md shadow-primary-muted sticky w-full top-[20px] left-0 right-0 flex justify-center border-b-2 border-primary-base">
         <form
-          className="p-40px flex flex-row gap-8px align-bottom items-end justify-end w-full"
+          className="p-24px sm:p-40px flex flex-row gap-8px align-bottom items-end justify-end w-full"
           onSubmit={handleClick}
         >
           <Combobox
@@ -85,7 +121,7 @@ export default function Page() {
             id="name-select-field"
             options={options}
             onChange={setSelectedOption}
-            onClear={handleClear}
+            onClear={handleReset}
           />
           <Button
             label="Search"
@@ -107,6 +143,7 @@ export default function Page() {
                 key={i}
                 number={table.tableNumber.toString()}
                 guests={table.guests}
+                showTableGuideHandler={handleFloorPlan}
               />
             );
           })}
@@ -144,6 +181,7 @@ export default function Page() {
 const TableCard = ({
   number,
   guests,
+  showTableGuideHandler,
 }: {
   number: string;
   guests: {
@@ -151,6 +189,7 @@ const TableCard = ({
     fullName: string;
     table: number | string;
   }[];
+  showTableGuideHandler: (table: string) => void;
 }) => {
   return (
     <motion.div
@@ -158,10 +197,21 @@ const TableCard = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="table-card text-left bg-white p-40px border border-l-4 border-l-primary-base rounded-4px"
+      className="table-card text-left bg-white p-24px sm:p-40px border border-l-4 border-l-primary-base rounded-4px"
     >
-      <div className="kaiseki text-h3 pb-24px">Table {number}</div>
-      <div className="grid grid-rows-2 grid-cols-2 columns-2">
+      <div className="flex justify-between items-center pb-24px">
+        <div
+          className="kaiseki flex justify-center items-center text-h3 border-b-2 border-b-gray-100 border-dashed cursor-pointer hover:text-primary-hover hover:border-b-primary-hover transition-all"
+          onClick={() => showTableGuideHandler(number)}
+        >
+          Table {number}
+          <RemixIcon
+            name="arrow-right-circle-line"
+            className="ml-8px text-h5 text-copy-caption"
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 columns-2">
         {guests.map((guest, i) => {
           return <p key={i}>{guest.fullName}</p>;
         })}
