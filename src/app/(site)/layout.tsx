@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import React from "react";
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
+/* eslint-disable react/no-unescaped-entities */
+import "@/app/globals.css";
+export const metadata = {
   title: "Eventful Philippines",
-  description: "Let's make events planning delightful",
+  description: "Events for everyone, planned by anyone",
 };
 
 export default function RootLayout({
@@ -13,5 +10,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className={`${inter.className}`}>{children}</div>;
+  return (
+    <html lang="en" className="w-screen h-screen">
+      <body className="site-bg w-full h-full">
+        <div className="banner flex flex-col py-16px sm:py-8px sm:flex-row justify-center gap-8px bg-info-hover absolute top-0 left-0 right-0 w-full text-white text-center">
+          <span className="font-bold">Woah! You're quite early!</span>
+          <p>The party hasn’t begun and we’re still working out the preps!</p>
+        </div>
+        {children}
+      </body>
+    </html>
+  );
 }

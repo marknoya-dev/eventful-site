@@ -9,7 +9,7 @@ export default function Page() {
     <motion.main
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="w-90% h-100% flex flex-col gap-8px my-auto"
+      className="w-90% h-100% flex flex-col gap-8px my-auto justify-center align-center items-center"
     >
       <div className="text-center w-100%">
         <span className="text-overline tracking-wider text-copy-caption text-h6 sm:text-body-lg">

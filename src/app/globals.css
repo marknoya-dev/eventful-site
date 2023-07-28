@@ -48,3 +48,10 @@
   background-size: cover;
   background-position: center;
 }
+
+.site-bg {
+  background-image: url("/site-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

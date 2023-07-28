@@ -34,7 +34,7 @@ export default function Home() {
             Scan the QR code below for your table assignment
           </span>
           <div className="w-[90%] relative">
-            <Image src={QRcode} alt="QR Code" />
+            <Image src={QRcode} alt="QR Code" priority />
           </div>
         </div>
         <div className="flex flex-col justify-center align-middle items-center mt-24px">
