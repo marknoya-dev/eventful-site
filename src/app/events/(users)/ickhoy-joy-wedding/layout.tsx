@@ -11,6 +11,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Ickhoy and Joy's Wedding Reception",
   description: "We're glad to have you celebrate this special day!",
+  metadataBase: new URL("https://eventful.ph"),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({

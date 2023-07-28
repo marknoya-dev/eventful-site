@@ -1,9 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import "@/app/globals.css";
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Eventful Philippines",
   description: "Events for everyone, planned by anyone",
-  metadataBase: ".",
+  metadataBase: new URL("https://eventful.ph"),
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({
