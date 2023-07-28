@@ -37,7 +37,7 @@ export default function Page({ params }: { params: { id: string } }) {
   return (
     <div
       ref={scope}
-      className="flex flex-col gap-8px justify-self-start justify-start align-top item pt-[20vh]"
+      className="max-h-screen overflow-scroll flex flex-col gap-8px justify-self-start justify-start align-top item pt-[20vh]  no-scrollbar"
     >
       <motion.div
         initial={{ opacity: 0, y: 0 }}
