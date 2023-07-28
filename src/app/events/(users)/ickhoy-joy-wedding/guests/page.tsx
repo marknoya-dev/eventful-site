@@ -131,9 +131,9 @@ export default function Page() {
           />
         </form>
       </div>
-      <main className="h-[75vh] overflow-y-scroll no-scrollbar mt-40px">
+      <div className="h-[75vh] w-full overflow-y-scroll no-scrollbar mt-16px rounded-8px">
         <motion.div
-          className="flex flex-col gap-16px"
+          className="flex flex-col gap-16px w-full"
           layout="position"
           ref={scope}
         >
@@ -173,7 +173,7 @@ export default function Page() {
             />
           </div>
         )}
-      </main>
+      </div>
     </>
   );
 }
@@ -197,7 +197,7 @@ const TableCard = ({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="table-card text-left bg-white p-24px sm:p-40px border border-l-4 border-l-primary-base rounded-4px"
+      className="w-full table-card text-left bg-white p-24px sm:p-40px border border-l-4 border-l-primary-base rounded-4px"
     >
       <div className="flex justify-between items-center pb-24px">
         <div

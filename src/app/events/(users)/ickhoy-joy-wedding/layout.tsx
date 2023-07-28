@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${inter.className}`}>
-      <body className="relative">
+      <body className="background-image">
         <Image
           src={eventfulBadge}
           alt="eventful badge"
@@ -34,20 +34,21 @@ export default function RootLayout({
             zIndex: 1,
           }}
         />
-        <div className="w-full h-full fixed">
-          <Image
-            src={backgroundImage}
-            quality={100}
-            sizes="100vw"
-            fill
-            objectFit="cover"
-            alt="Background image"
-            style={{
-              zIndex: -1,
-            }}
-          />
-        </div>
-        <main className="p-40px max-w-screen-md h-screen flex flex-col gap-8px align-middle items-center mx-auto">
+
+        {/* <Image
+          src={backgroundImage}
+          quality={100}
+          sizes="100vw"
+          fill
+          objectFit="cover"
+          alt="Background image"
+          style={{
+            height: "100%",
+            position: "absolute",
+            zIndex: -1,
+          }}
+        /> */}
+        <main className="p-40px max-w-screen-md h-screen flex flex-col items-center justify-center align-middle mx-auto gap-8px">
           <GuestsContextProvider>{children}</GuestsContextProvider>
         </main>
       </body>

@@ -41,3 +41,10 @@
   letter-spacing: 2.89px;
   text-transform: uppercase;
 }
+
+.background-image {
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
