@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GuestsContextProvider } from "@/app/events/(users)/ickhoy-joy-wedding/GuestsContext";
 import Image from "next/image";
-import backgroundImage from "public/background.jpg";
 import eventfulBadge from "public/eventful-badge.png";
 import React from "react";
 const inter = Inter({ subsets: ["latin"] });

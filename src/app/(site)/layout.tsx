@@ -3,6 +3,7 @@ import "@/app/globals.css";
 export const metadata = {
   title: "Eventful Philippines",
   description: "Events for everyone, planned by anyone",
+  metadataBase: ".",
 };
 
 export default function RootLayout({
