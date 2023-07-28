@@ -7,6 +7,7 @@ import backgroundImage from "public/background.jpg";
 import eventfulBadge from "public/eventful-badge.png";
 import React from "react";
 const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ickhoy and Joy's Wedding Reception",
@@ -21,19 +22,21 @@ export default function RootLayout({
   return (
     <html className={`${inter.className}`}>
       <body className="background-image">
-        <Image
-          src={eventfulBadge}
-          alt="eventful badge"
-          quality={100}
-          style={{
-            position: "fixed",
-            bottom: "20px",
-            right: "20px",
-            width: "180px",
-            height: "auto",
-            zIndex: 1,
-          }}
-        />
+        <Link href="/">
+          <Image
+            src={eventfulBadge}
+            alt="eventful badge"
+            quality={100}
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              width: "180px",
+              height: "auto",
+              zIndex: 1,
+            }}
+          />
+        </Link>
 
         {/* <Image
           src={backgroundImage}

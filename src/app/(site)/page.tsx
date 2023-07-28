@@ -27,11 +27,18 @@ export default function Page() {
   const [fieldValue, setFieldValue] = useState<string>("");
   const [isSubmitted, setSubmitted] = useState<boolean>(false);
 
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler: React.FormEventHandler<HTMLFormElement> = (
+    e: React.SyntheticEvent
+  ) => {
+    e.preventDefault();
 
-    const email = event.target.email.value;
-    const name = event.target.name.value;
+    const target = e.target as typeof e.target & {
+      email: { value: string };
+      name: { value: string };
+    };
+
+    const email = target.email.value;
+    const name = target.name.value;
     SendData(name, email);
     setSubmitted(true);
   };
@@ -57,7 +64,9 @@ export default function Page() {
           <div className="border border-outline-default rounded-8px bg-white shadow-sm w-fit mx-8px">
             <div className="p-24px flex flex-col gap-16px">
               <div>
-                <h3 className="text-h6 font-bold">Be an Eventful Vendor!</h3>
+                <h3 className="text-h6 font-bold text-black">
+                  Be an Eventful Vendor!
+                </h3>
                 <p className="text-caption text-copy-caption mt-4px">
                   {/* // eslint-disable-next-line react/no-unescaped-entities */}
                   Let you clients find you and join the Philippines' largest
@@ -102,11 +111,13 @@ export default function Page() {
               )}
             </div>
             <div className="text-body text-black flex flex-col sm:flex-row gap-2px items-left px-24px py-16px border-t border-outline-default">
-              <span className="font-bold">
-                Do you have questions? Reach out to
-              </span>
-              <span></span>
-              <span>marknoya@eventful.ph</span>
+              <span className="font-bold text-info-base">Any questions?</span>
+              <div className="flex gap-4px">
+                <span> Reach out to</span>
+                <a href="mailto: marknoya@eventful.ph" className="underline">
+                  marknoya@eventful.ph
+                </a>
+              </div>
             </div>
           </div>
         </div>
