@@ -34,17 +34,16 @@ export default function RootLayout({
             zIndex: 1,
           }}
         />
-        <div>
+        <div className="w-full h-full fixed">
           <Image
             src={backgroundImage}
             quality={100}
             sizes="100vw"
+            fill
+            objectFit="cover"
             alt="Background image"
             style={{
-              width: "100vw",
-              height: "100vh",
               zIndex: -1,
-              position: "fixed",
             }}
           />
         </div>
