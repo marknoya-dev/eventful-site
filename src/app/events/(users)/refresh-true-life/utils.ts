@@ -903,18 +903,24 @@ export const list = {
     {
       id: "A216",
       guests: [
-        "Noel Munio, Wilfred Ross Biscocho, Clouie Ckien Caagbay, Jerome Clemente",
+        "Noel Munio",
+        "Wilfred Ross Biscocho",
+        "Clouie Ckien Caagbay",
+        "Jerome Clemente",
       ],
     },
     {
       id: "A218",
       guests: [
-        "Arjay De Jesus, Randolf Angelo Reyes, John Nikko Nadura, Mark Manayan",
+        "Arjay De Jesus",
+        "Randolf Angelo Reyes",
+        "John Nikko Nadura",
+        "Mark Manayan",
       ],
     },
     {
       id: "A220",
-      guests: ["Alex Reyes, Earla Reyes, Yvana Kisha Reyes"],
+      guests: ["Alex Reyes", "Earla Reyes", "Yvana Kisha Reyes"],
     },
     {
       id: "A302",
