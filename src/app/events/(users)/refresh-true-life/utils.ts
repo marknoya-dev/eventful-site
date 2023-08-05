@@ -57,7 +57,7 @@ export const list = {
         "Lilybeth Villanueva",
         "Rafaela Laurice Lauson",
         "Danicalhin Vergara",
-        "Wendy Origines",
+        "Mary Ann Rico",
       ],
     },
     {
@@ -631,6 +631,7 @@ export const list = {
         "Miguel Teodoro Perez",
         "Tomas Roy Potes",
         "Randolf Angelo Reyes",
+        "Neljohn Cornelio",
       ],
     },
     {
@@ -737,6 +738,7 @@ export const list = {
         "Allan Rey Genciana",
         "Christopher Lucindo",
         "Dr. Galvez Tan",
+        "Monrey Lao",
       ],
     },
     {
@@ -783,12 +785,7 @@ export const list = {
     },
     {
       id: "A111",
-      guests: [
-        "Michael Andrew Villegas",
-        "Eric Paolo Calpito",
-        "Jezrell Marcelino",
-        "Adrian Vallereano Pedrosa",
-      ],
+      guests: ["Michael Andrew Villegas", "Adrian Vallereano Pedrosa"],
     },
     {
       id: "A113",
@@ -1129,7 +1126,6 @@ export const list = {
       id: "B120",
       guests: [
         "Theresa Abello",
-        "Tiffany Vargas",
         "Bernice Anne Balongtong",
         "Anne Claire Lim",
         "Jenny Fernandez",
@@ -1225,7 +1221,6 @@ export const list = {
         "Winnie Vivar",
         "Edenille Santos",
         "Joan Noble",
-        "Princess Avila",
         "Erlinda Falcon",
         "Juliet Santillan",
       ],
@@ -1400,14 +1395,7 @@ export const list = {
     },
     {
       id: "B305",
-      guests: [
-        "Kenneth Pascua",
-        "Kyle Romuel Montealto",
-        "Archie Jose",
-        "Chino Santos",
-        "Christian Aquino",
-        "Jun Santos",
-      ],
+      guests: ["Kenneth Pascua", "Archie Jose", "Chino Santos", "Jun Santos"],
     },
     {
       id: "B306",
@@ -1418,6 +1406,7 @@ export const list = {
         "Edwin Capulso",
         "Juan Carlos Herrero",
         "Jan Alain Garcia",
+        "Monrey Lao",
       ],
     },
     {
@@ -1433,13 +1422,7 @@ export const list = {
     },
     {
       id: "B308",
-      guests: [
-        "Anita Yu",
-        "Nanet Vitug",
-        "Ma. Yolanda Borres",
-        "Mian Tan",
-        "Monalisa Arbis",
-      ],
+      guests: ["Anita Yu", "Nanet Vitug", "Monalisa Arbis"],
     },
     {
       id: "B309",
