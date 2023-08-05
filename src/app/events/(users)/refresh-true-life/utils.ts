@@ -186,7 +186,7 @@ export const list = {
         "Louisha Angeline Sison",
         "Bernice Anne Balontong",
         "Anne Claire Lim",
-        "Tiffany Fwd Vargas",
+        "Tiffany Vargas",
         "Jessielle Revilla",
       ],
     },
@@ -315,7 +315,7 @@ export const list = {
         "Aurora Monis",
         "Rowena Sy",
         "Anita Yu",
-        "Ma Yolanda Borres",
+        "Ma. Yolanda Borres",
       ],
     },
 
@@ -587,6 +587,7 @@ export const list = {
         "Alvin Jade Rivano",
         "Juan Antonio Tabalba",
         "Chino Santos",
+        "Romel Manabat",
       ],
     },
     {
@@ -625,7 +626,7 @@ export const list = {
     {
       id: "M53",
       members: [
-        "Julian Jr. Tampol",
+        "Julian Tampol Jr.",
         "Jarrell Fernandez",
         "Miguel Teodoro Perez",
         "Tomas Roy Potes",
@@ -701,7 +702,6 @@ export const list = {
       id: "M60",
       members: [
         "Gilbert Gelaga",
-        "Neljohn Cornelio",
         "Jan Alain Garcia",
         "Monrey Lao",
         "Noel Ramirez",
@@ -832,15 +832,15 @@ export const list = {
     },
     {
       id: "A118",
-      guests: ["Jane Macabontoc", "Judith Silot"],
+      guests: ["Jane Macabontoc", "Flordiluna Dorot"],
     },
     {
       id: "A120",
       guests: [
-        "Julian Jr. Tampol",
+        "Julian Tampol Jr.",
         "Jarrell Fernandez",
         "Miguel Teodoro Perez",
-        "Tomas Roy Pote",
+        "Tomas Roy Potes",
       ],
     },
     {
@@ -930,6 +930,7 @@ export const list = {
         "Robert Lawrence Guido",
         "Juster Ryan Guidotong",
         "John Michael Abara",
+        "Robert Guido",
       ],
     },
     {
@@ -1073,10 +1074,14 @@ export const list = {
       ],
     },
     {
+      id: "B113",
+      guests: ["Judith Silot"],
+    },
+    {
       id: "B114",
       guests: [
-        "Mayet Yusingco",
-        "Chason Zulueta",
+        "Maria Nenita Yusingco",
+        "Chasen Zulueta",
         "Clarissa Domingo",
         "Marie Cel Gonzales",
         "Lili Ann Advincula",
@@ -1194,12 +1199,13 @@ export const list = {
     {
       id: "B207",
       guests: [
-        "Jarrel Fernandez",
+        "Jarrell Fernandez",
         "Randolf Angelo Reyes",
         "Tomas Roy Potes",
         "Miguel Perez",
         "Nil Howard Olinares",
         "Miro Avena",
+        "Miguel Teodoro Perez",
       ],
     },
     {
@@ -1461,7 +1467,7 @@ export const list = {
         "Marion Timothy Gaurano",
         "Jan Paolo Vila",
         "Noel Ramirez",
-        "Alain Garcia",
+        "Jan Alain Garcia",
         "Monrey Lao",
       ],
     },
@@ -1471,7 +1477,7 @@ export const list = {
         "Arnie Atienza",
         "Imelda Losabio",
         "Moneth Matienzo",
-        "Morales Angelica",
+        "Angelica Morales",
         "Fatima Bolima",
       ],
     },
@@ -1496,6 +1502,7 @@ export const list = {
         "Wendy Origines",
       ],
     },
+
     {
       id: "B315",
       guests: [

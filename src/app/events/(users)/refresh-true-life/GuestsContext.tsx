@@ -130,6 +130,8 @@ export const GuestsContextProvider = ({
       return currGuest.roomID === guest?.roomID;
     });
 
+    // const rooms = roomList.map((room) => guest.roomID === room.roomID);
+    // console.log(rooms);
     return { guest, guests: roomies };
   };
 
