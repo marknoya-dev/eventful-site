@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { Stark } from "@eventful-ph/stark";
+import { Stark } from "@eventful-ph/stark"; //export plugin to extend in config
 const config = {
   content: [
     "./node_modules/@eventful-ph/stark/dist/components/**/*.{js,ts,jsx,tsx}",

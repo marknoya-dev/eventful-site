@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Jost&family=Kaisei+Tokumin:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import "remixicon/fonts/remixicon.css";
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.kaiseki {
+  font-family: "Kaisei Tokumin", serif;
+}
+
+.satisfy {
+  font-family: "Satisfy", cursive;
+}
+
+.jost {
+  font-family: "Jost", sans-serif;
+}
+
+.event-header {
+  font-family: "Satisfy", serif;
+  color: #4b4639;
+}
+
+.text-overline {
+  font-family: "Jost", sans-serif;
+  color: #555;
+  text-align: center;
+  font-size: 1em;
+  font-style: normal;
+  line-height: 22px;
+  letter-spacing: 2.89px;
+  text-transform: uppercase;
+}
+
+.background-image {
+  background-image: url("/refresh-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
